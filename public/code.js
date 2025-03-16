@@ -35,6 +35,8 @@
 
         reader.onload = function(e) {
             let buffer = new Uint8Array(reader.result)
+
+            buffer = pako.deflate(buffer)
             
             let el = document.createElement("div")
             el.classList.add('item')
